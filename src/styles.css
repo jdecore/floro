@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  --color-canvas: var(--color-bg);
+  --color-panel: var(--color-surface);
+  --color-panel-alt: var(--color-surface-2);
+  --color-cta: var(--color-accent);
+  --color-cta-hover: var(--color-accent-hover);
+  --color-ink: var(--color-text);
+  --color-stroke: var(--color-stroke);
+}
+
+:root {
+  /* Paleta Mercado al Atardecer (Modo Claro) */
+  --color-bg: #EDEDE9;
+  --color-surface: #FFFFFF;
+  --color-surface-2: #E2E2DB;
+  --color-border: #D5D5CB;
+  --color-stroke: #191B18;
+  --color-text: #191B18;
+  --color-muted: #5A5E58;
+  --color-primary: #1D3A5F;
+  --color-primary-hover: #162A44;
+  --color-on-primary: #FFFFFF;
+  --color-accent: #A85B12;
+  --color-accent-hover: #8F5A00;
+  --color-on-accent: #FFFFFF;
+  --color-success: #1E6B45;
+  --color-warning: #8A5A00;
+  --color-danger: #9E2B47;
+  --color-danger-soft: color-mix(in srgb, var(--color-danger) 9%, transparent);
+  --color-warning-soft: color-mix(in srgb, var(--color-warning) 12%, transparent);
+  --color-accent-soft: color-mix(in srgb, var(--color-accent) 10%, transparent);
+
+  /* Sombras planas duras sin blur */
+  --shadow-card: 6px 6px 0px var(--color-stroke);
+  --shadow-element: 3px 3px 0px var(--color-stroke);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Paleta Mercado al Atardecer (Modo Oscuro) */
+    --color-bg: #141715;
+    --color-surface: #1F2421;
+    --color-surface-2: #2A312C;
+    --color-border: #39413A;
+    --color-stroke: #ECEEE8;
+    --color-text: #ECEEE8;
+    --color-muted: #A9AEA2;
+    --color-primary: #7FA8D0;
+    --color-primary-hover: #93B9DA;
+    --color-on-primary: #141715;
+    --color-accent: #E0A038;
+    --color-accent-hover: #EDB457;
+    --color-on-accent: #141715;
+    --color-success: #4ADE80;
+    --color-warning: #FBBF24;
+    --color-danger: #F87171;
+  }
+}
+
+/* ---------------------------------------------------- */
+/* Utilidades Brutal Nouveau conformes al validador     */
+/* ---------------------------------------------------- */
+
+@utility card-whiplash {
+  border-radius: 48px 16px 56px 20px / 22px 50px 24px 46px;
+}
+
+@utility frame-whiplash {
+  border-radius: 36px 12px 42px 16px / 18px 38px 18px 34px;
+}
+
+@utility tag-whiplash {
+  border-radius: 28px 10px 24px 12px / 12px 22px 10px 26px;
+}
+
+/* Botón elíptico primario (shorthand con / obligatorio para validador) */
+.btn-primary {
+  border-radius: 60% 40% 55% 45% / 65% 55% 45% 35%;
+}
+
+/* Panel de acento único con torn edge superior */
+.torn-panel {
+  clip-path: polygon(
+    0% 2%, 5% 0%, 10% 3%, 15% 1%, 20% 3%, 25% 0%, 30% 2%, 35% 0%, 40% 3%, 45% 1%,
+    50% 3%, 55% 0%, 60% 2%, 65% 0%, 70% 3%, 75% 1%, 80% 3%, 85% 0%, 90% 2%, 95% 0%, 100% 3%,
+    100% 100%, 0% 100%
+  );
+}
